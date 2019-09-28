@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - stable
+install:
+  - npm install
+script:
+  - npm test
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "TFwYZ5K/K1LeAuYAXAcpXNMJG/qsqK6NV2ertTx5TgG31AJJ4ZPUWHg4pVStubtFgDe3i7gg7i6iNSj3jZTMtNcDXysz6GAttKmEBnjEXsFKTwmXrFqzMkV/vMAlf4NMDQ/9YUPzZzumwJw/TkaCxI1KVJedq6M0gNHI2J7hHFVgHhsy1cM/QeeRIpYNPbHPyScWeig6MUUVlFUK7hXVp3WjbOvjkzQsQn5A69eOJXQSuabnwb0NmZ0Ad0B1+NkrVenJTXQIFsWMvB+5IVQF9nj/0VlQA5ouzUuLLv/jaxeznvMXXyMPRM4xOjJxPtLLoxI74+7zMgncG1nmkasf3x8QJb8dInXnkpzN0kyQBK4CKY35jq9MC8eBCsocQ/3RdYyuShj/UVErPJmbnIM+cB5nq3zgcC+8d1/e3rT3ohErb+WvP1I0oi13dT/GkTH785ggg3THOQ5o+Hc3EreKHp2y7aNG10ohvkG2DHXTV9O+T43UMmFKvsZAbv8K5+QOh0TVdFUU0Bq+E5EcOIzb49xILkPCSAq3wnJtUC6EyMKrQGr/kF0wP/VCY4wzpZgex7FsJoQu6a9IsMhJd+akiUKw4jWfuRMAgBWuQaFMadS6pgDgHKl0ASV0KekiDs+5sK1Nvi6WhlZhLnLVxhyusn/FNw6etDRJUCdEJZmAn0Y="
+    app: travis-ci-test-2019
+  on:
+    repo: koskh/travis-ci
+    branch: master
