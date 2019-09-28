@@ -16,3 +16,23 @@ script:
 
 2. Установили зависимости и собрали локально базовую сборку приложения.
 `npm install express ... babel.... react... wwebpack... и далее по списку...`
+
+3. начальный `.travis.yml`
+
+4. Решение проблем
+
+Если 
+
+```
+    Installing deploy dependencies
+    dpl.2
+    Preparing deploy
+    No stash entries found.
+    missing api_key
+    failed to deploy
+```
+проблема с  api-key
+
+`travis encrypt heroku:key --org -r koskh/ci-cl --add deploy.api.key`
+
+`--org` если на travis-ci.org, `--pro` если на travis-ci.com

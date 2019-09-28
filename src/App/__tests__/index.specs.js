@@ -10,6 +10,6 @@ describe('App', () => {
     const {container, getByText} = render(<Component /> );
 
     expect(container).toBeInTheDocument();
-    getByText('Start React App!');
+    getByText('Start React App!111');
   });
 });
