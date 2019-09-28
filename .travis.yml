@@ -10,7 +10,4 @@ deploy:
   provider: heroku
   api_key:
     secure: "Pkmv2gYB3Wy7jMixWXG0LqdK0wbPekOonY0x6t3wewmF3hg4HGY/uJQcN8MoWv/iep/m5vJEr2tZEXU0mw9WotrUiAPxhFa/3SbrpVW1IT1tS2/l9m8jVb/Z08AyKZaE5zzLjfIDFk+i4sTDJISqmY8ra3YMZE1tG9AzD8d5HToRgXuu54PDxS4lVARWXnR4ImRlpZ0qsHo2/ecOkaPc6RWNZzI+rdDE2gbJ9lV0MBUhya4W3Q6NGWAL7VbIB9Ms+6PkfbiPJeEIuPryG186lyGR/8lyJFHUWlRw6KLPp5pEwIBJG3NmLyKKM9vwBEIhb5wzombZ6mSJflfoRzh37e8gk4HblD9uhuidGSOxhyHGhIJyekTuow/6K7pZLv+WfdyKl66q2HVoOd5rwIPdFOCLSliYhnaJ6cF9xwGi/0P1veGNMRlkwCn1WS0SXVBPzCgkglHJCOkv8oY0ahscCxYHYy5GNlaKARiWgO0tV9DhZ2evlMGaEdXWfNtJ2fr9ZbEpr9/DlgOyJB+hi04rtPQg0JQsfEBMk3XpKW9shy77ZKa6u6yiwVbwkHefvLIGVdLJgS1Dk8urv1YMvyOcyU40Pzhy3RaWbG13HpDKrHq2iBkPpEbkwWv48kxCllCQuRZNhnyG0KvTqoexUo8SmaPkAUYk/wNxU3fHFyaflwM="
-    app: travis-ci-test-2019
-  on:
-    repo: koskh/ci-cl
-    branch: master
+    master: travis-ci-test-2019
