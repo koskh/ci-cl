@@ -4,7 +4,7 @@ class App extends React.Component {
   render() {
     return (
         <div>
-          <h1>Start React App!</h1> with test init
+          <h1>Start React App!</h1>
         </div>
     );
   }
