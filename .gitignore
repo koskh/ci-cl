@@ -1,0 +1,9 @@
+.idea
+.vscode
+build
+transpiled
+flow-typed
+node_modules
+npm-debug.log
+jest/coverage
+__snapshots__
