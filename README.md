@@ -1,5 +1,5 @@
 # Использование travis-ci для fullstack js проекта (express.js, react.js)
-[![Build Status](https://travis-ci.org/koskh/travis-ci.svg?branch=master)](https://travis-ci.org/koskh/ravis-ci)
+[![Build Status](https://travis-ci.org/koskh/ci-cl.svg?branch=master)](https://travis-ci.org/koskh/ci-cl)
 
 1. Подключили travis-ci.org к githab, дали разрешения на требуемые  действия. 
 Создали `.travis.yml` в корне репозитория, с содержимым:
