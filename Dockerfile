@@ -1,7 +1,7 @@
 FROM node
 
 COPY package.json .
-COPY build build
+COPY dist dist
 COPY server.js .
 
 RUN npm install --production
