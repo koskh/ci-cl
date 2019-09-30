@@ -1,14 +1,17 @@
 language: node_js
 node_js:
-- stable
+  - stable
+
 install:
-- npm install
+  - npm install
 script:
-- npm test
+  - npm test
+
+before_deploy:
+  - cd ./dist
 deploy:
   provider: heroku
   app: travis-ci-test-2019
-
   on:
     repo: koskh/ci-cl
     branch: master

@@ -19,9 +19,11 @@ script:
 
 3. начальный `.travis.yml`
 
+3.1 Хочу, что бы Travis билдил, собирал докер с билдом, выкоадывал докер-образ на heroku
+
 4. Решение проблем
 
-Если 
+Если при диплое вохвращает такую ошибку:
 
 ```
     Installing deploy dependencies
@@ -31,8 +33,6 @@ script:
     missing api_key
     failed to deploy
 ```
-проблема с  api-key
-
-`travis encrypt heroku:key --org -r koskh/ci-cl --add deploy.api.key`
+проблема с  api-key.  Запускаем: `travis encrypt heroku:key --org -r koskh/ci-cl --add deploy.api.key`
 
 `--org` если на travis-ci.org, `--pro` если на travis-ci.com
