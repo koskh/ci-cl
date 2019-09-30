@@ -20,7 +20,8 @@ script:
 3.Начальная настрока `.travis.yml`
 
 3.1 Запуск тестов, запуск сборки, деплой из dist папки.
-в папку `dist` нужно добавить файлы `package.json` и `server.js`, что бы хероку мог запустить `express`.
+
+`.travis.yml` в корне проекта
 ```
 language: node_js
 node_js:
@@ -45,7 +46,36 @@ deploy:
     secure: E5+G...VKIYVrFvvTVh3ih8=
 
 ```
-Поглядеть, что и как задеплоилось `heroku run ls --app application-name`. Должны бать копия dist- папки. 
+в папку `dist` нужно добавить файлы `package.json`
+```
+"scripts": {
+    "start": "node server.js"
+  },
+
+...
+
+dependencies": {
+    "express": "^4.17.1"
+  }
+```
+ 
+ и `server.js` , что бы хероку мог запустить `express` и инсталлил только необходимый минимум.
+```
+    const express = require('express');
+    
+    const port = process.env.PORT || 3000;
+    
+    const server = express();
+    server.use(express.static('build'));
+    
+    server.listen(port, () => {
+        console.log(`App listening on port ${port}`);
+    });
+
+```
+
+Поглядеть, что и как задеплоилось `heroku run ls --app application-name`. Должна быть
+копия dist- папки с собранными артефактами в папке `build`
 
 3.2 Билд, сборка докера с билдом, деплой
 
@@ -68,7 +98,8 @@ deploy:
     
     CMD PORT=$PORT npm run start
 ```
- в dist-папку, переключили на использование контейнеров `heroku stack:set container`.
+ в dist-папку, переключили хероку на использование контейнеров `heroku stack:set container`, отсоеденили 
+ "Deployment method" от гитхаба в панеле инстурментов. 
 
 4.Решение проблем
 
