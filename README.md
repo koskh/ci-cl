@@ -1,7 +1,8 @@
 # Использование travis-ci для Single-Page проекта (express.js, react.js)
 [![Build Status](https://travis-ci.org/koskh/ci-cl.svg?branch=master)](https://travis-ci.org/koskh/ci-cl)
 
-1.Подключили `travis-ci.org` к гитхабу, дали разрешения на требуемые действия.
+###Начальные действия. 
+Подключили `travis-ci.org` к гитхабу, дали разрешения на требуемые действия.
 Создали `.travis.yml` в корне репозитория, с содержимым:
 ```
 language: node_js
@@ -14,14 +15,12 @@ script:
 ```  
 Запушили. Получили ошибку сборки с описанием из package.json 
 
-2.Установили зависимости и собрали локально базовую сборку приложения.
+###Начальная настройка `.travis.yml`
+Установили зависимости и собрали локально базовую сборку приложения.
 `npm install express ... babel.... react... wwebpack... и далее по списку...`
 Собрали запустили локально, проверили, что работает.
 
-3.Начальная настрока `.travis.yml`
-
-3.1 Запуск тестов, запуск сборки, деплой из dist папки.
-
+#####Тесты, сборка и деплой из dist папки.
 `.travis.yml` в корне проекта
 ```
 language: node_js
@@ -78,7 +77,7 @@ dependencies": {
 Поглядеть, что и как задеплоилось `heroku run ls --app application-name`. Должна быть
 копия dist- папки с собранными артефактами в папке `build`
 
-3.2 Билд, сборка докера с билдом, деплой
+#####Тесты, сборка и деплой в Docker образе
 
 Добавили `heroku.yml`
 ```
@@ -102,8 +101,7 @@ dependencies": {
  в dist-папку, переключили хероку на использование контейнеров `heroku stack:set container`, отсоеденили 
  "Deployment method" от гитхаба в панеле инстурментов. 
 
-4.Решение проблем
-
+###Решение проблем
 Если при диплое возвращает такую ошибку:
 
 ```
@@ -114,6 +112,5 @@ dependencies": {
     missing api_key
     failed to deploy
 ```
-проблема с api-key.  Запускаем: `travis encrypt ${heroku auth:token} --org -r koskh/ci-cl --add deploy.api.key`
-
-`--org` если на travis-ci.org, `--pro` если на travis-ci.com
+проблема с api-key.  Запускаем: `travis encrypt ${heroku auth:token} --org -r koskh/ci-cl --add deploy.api.key`.
+Тут надо внимательно, `--org` если на travis-ci.org, `--pro` если на travis-ci.com
