@@ -1,7 +1,7 @@
-# Использование travis-ci для fullstack js проекта (express.js, react.js)
+# Использование travis-ci для Single-Page проекта (express.js, react.js)
 [![Build Status](https://travis-ci.org/koskh/ci-cl.svg?branch=master)](https://travis-ci.org/koskh/ci-cl)
 
-1.Подключили travis-ci.org к githab, дали разрешения на требуемые  действия. 
+1.Подключили `travis-ci.org` к гитхабу, дали разрешения на требуемые действия.
 Создали `.travis.yml` в корне репозитория, с содержимым:
 ```
 language: node_js
@@ -12,10 +12,11 @@ install:
 script:
   - npm test
 ```  
-Запушили. Получили ошибку сборки с описанием и package.json 
+Запушили. Получили ошибку сборки с описанием из package.json 
 
 2.Установили зависимости и собрали локально базовую сборку приложения.
 `npm install express ... babel.... react... wwebpack... и далее по списку...`
+Собрали запустили локально, проверили, что работает.
 
 3.Начальная настрока `.travis.yml`
 
