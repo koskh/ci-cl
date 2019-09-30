@@ -45,6 +45,7 @@ deploy:
     secure: E5+G...VKIYVrFvvTVh3ih8=
 
 ```
+Поглядеть, что и как задеплоилось `heroku run ls --app application-name`. Должны бать копия dist- папки. 
 
 3.2 Билд, сборка докера с билдом, деплой
 
@@ -67,7 +68,7 @@ deploy:
     
     CMD PORT=$PORT npm run start
 ```
- в dist-папку, переключили на использование контейнеров `heroku stack:set container`
+ в dist-папку, переключили на использование контейнеров `heroku stack:set container`.
 
 4.Решение проблем
 
