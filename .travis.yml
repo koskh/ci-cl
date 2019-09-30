@@ -10,6 +10,7 @@ script:
 before_deploy:
   - cd ./dist
 deploy:
+  skip_cleanup: true
   provider: heroku
   app: travis-ci-test-2019
   on:
