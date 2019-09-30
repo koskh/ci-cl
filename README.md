@@ -33,6 +33,6 @@ script:
     missing api_key
     failed to deploy
 ```
-проблема с  api-key.  Запускаем: `travis encrypt heroku:key --org -r koskh/ci-cl --add deploy.api.key`
+проблема с  api-key.  Запускаем: `travis encrypt ${heroku auth:token} --org -r koskh/ci-cl --add deploy.api.key`
 
 `--org` если на travis-ci.org, `--pro` если на travis-ci.com
