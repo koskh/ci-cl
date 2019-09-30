@@ -12,7 +12,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     chunkFilename: '[name].js',
-    publicPath: '/'
+    path: path.resolve(__dirname, './dist/build'),
   },
 
   module: {
@@ -50,7 +50,7 @@ module.exports = {
     // }),
   ],
   devServer: {
-    contentBase: path.join(__dirname, '../build'),
+    contentBase: path.join(__dirname, '../dist/build'),
     compress: true,
     historyApiFallback: true,
     host: '0.0.0.0',
