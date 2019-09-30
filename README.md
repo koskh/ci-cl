@@ -48,11 +48,30 @@ deploy:
 
 3.2 Билд, сборка докера с билдом, деплой
 
-Добавили `heroku.yml` и `Dockerfile` в dist- папку, переклюсили на использхование контейнеров `heroku stack:set container`
+Добавили `heroku.yml`
+```
+    build:
+      docker:
+        web: Dockerfile
+```
+ и `Dockerfile`
+
+```
+    FROM node
+    
+    COPY package.json .
+    COPY build build
+    COPY server.js .
+    
+    RUN npm install --production
+    
+    CMD PORT=$PORT npm run start
+```
+ в dist-папку, переключили на использование контейнеров `heroku stack:set container`
 
 4.Решение проблем
 
-Если при диплое вохвращает такую ошибку:
+Если при диплое возвращает такую ошибку:
 
 ```
     Installing deploy dependencies
@@ -62,6 +81,6 @@ deploy:
     missing api_key
     failed to deploy
 ```
-проблема с  api-key.  Запускаем: `travis encrypt ${heroku auth:token} --org -r koskh/ci-cl --add deploy.api.key`
+проблема с api-key.  Запускаем: `travis encrypt ${heroku auth:token} --org -r koskh/ci-cl --add deploy.api.key`
 
 `--org` если на travis-ci.org, `--pro` если на travis-ci.com
