@@ -47,7 +47,8 @@ deploy:
 ```
 
 3.2 Билд, сборка докера с билдом, деплой
-добавили `heroku.yml` и `Dockerfile`
+
+Добавили `heroku.yml` и `Dockerfile` в dist- папку, переклюсили на использхование контейнеров `heroku stack:set container`
 
 4.Решение проблем
 
